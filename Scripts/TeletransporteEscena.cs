@@ -9,7 +9,6 @@ public class TeletransporteEscena : MonoBehaviour
   {
     if (reference_object == null) return;
 
-    // ---------------- Teletransportar Tipo1 ----------------
     GameObject[] shields1 = GameObject.FindGameObjectsWithTag("Escudo1");
     GameObject[] type1_objects = GameObject.FindGameObjectsWithTag("Tipo1");
 
@@ -18,12 +17,11 @@ public class TeletransporteEscena : MonoBehaviour
       float distance = Vector3.Distance(reference_object.position, shield.transform.position);
       if (distance <= trigger_distance)
       {
-        foreach (var obj in type1_objects)
-          obj.transform.position = shield.transform.position;
+        foreach (var current_object in type1_objects)
+          current_object.transform.position = shield.transform.position;
       }
     }
 
-    // ---------------- Teletransportar Tipo2 ----------------
     GameObject[] shields2 = GameObject.FindGameObjectsWithTag("Escudo2");
     GameObject[] type2_objects = GameObject.FindGameObjectsWithTag("Tipo2");
 
@@ -32,8 +30,8 @@ public class TeletransporteEscena : MonoBehaviour
       float distance = Vector3.Distance(reference_object.position, shield.transform.position);
       if (distance <= trigger_distance)
       {
-        foreach (var obj in type2_objects)
-          obj.transform.position = shield.transform.position;
+        foreach (var current_object in type2_objects)
+          current_object.transform.position = shield.transform.position;
       }
     }
   }
